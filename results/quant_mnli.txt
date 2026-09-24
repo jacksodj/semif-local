@@ -1,0 +1,8 @@
+  bf16  acc=0.9333   0.93 pairs/sec  (1072 ms/pair)
+ 8-bit  acc=0.9333   1.78 pairs/sec  (562 ms/pair)
+ 4-bit  acc=0.8267   1.84 pairs/sec  (543 ms/pair)
+predictions changed vs bf16: 8-bit 0, 4-bit 22
+  bf16  acc=0.9200   0.70 pairs/sec  (1426 ms/pair)
+ 8-bit  acc=0.9133   1.75 pairs/sec  (572 ms/pair)
+ 4-bit  acc=0.8667   1.87 pairs/sec  (534 ms/pair)
+predictions changed vs bf16: 8-bit 1, 4-bit 20

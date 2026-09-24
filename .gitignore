@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+# model weights: downloaded (openjev/) and converted (dist/)
+openjev/
+dist/
+.DS_Store

@@ -1,0 +1,22 @@
+[project]
+name = "semif-local"
+version = "0.1.0"
+description = "SemIf (semantic if) cross-encoder running natively on Apple Silicon with MLX, plus the harness and triage pipeline from 'Running SemIf locally'."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+dependencies = [
+    "mlx",
+    "mlx-lm==0.31.3",          # the port reaches into its internals; newer main has moved them
+    "transformers>=5.17",      # first release with Qwen3_5ForSequenceClassification
+    "huggingface_hub",
+    "numpy",
+]
+
+[project.optional-dependencies]
+torch = ["torch>=2.14", "accelerate"]   # compare_mlx_torch.py, bench.py torch
+eval = ["datasets"]                     # eval_mlx.py, quant_mnli.py
+
+[tool.setuptools]
+py-modules = ["semif_mlx"]
+packages = ["semif"]

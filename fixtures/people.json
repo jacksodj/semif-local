@@ -1,0 +1,19 @@
+{
+  "_note": "Fictional directory: how many past threads each person appeared on, per business unit. marcus.bell is the exec who is on everything.",
+  "people": {
+    "priya.raman@northwind.example":  {"Developer Experience": 21, "Platform": 1},
+    "tomas.okafor@northwind.example": {"Developer Experience": 17, "Security": 2},
+    "li.chen@northwind.example":      {"Platform": 26, "Data": 2},
+    "marcus.bell@northwind.example":  {"Platform": 9, "Security": 8, "Data": 7, "Payments": 8},
+    "sofia.marsh@northwind.example":  {"Growth": 24, "Payments": 2},
+    "dev.anand@northwind.example":    {"Payments": 19, "Growth": 3},
+    "hannah.voss@northwind.example":  {"Finance": 18},
+    "omar.haddad@northwind.example":  {"Payments": 11, "Finance": 4},
+    "grace.kim@northwind.example":    {"Security": 20},
+    "noah.fisher@northwind.example":  {"Data": 16, "Legal": 1},
+    "amara.nwosu@northwind.example":  {"Legal": 22},
+    "ethan.cole@northwind.example":   {"People": 9, "Office of the CIO": 3},
+    "ruth.adeyemi@northwind.example": {"Office of the CIO": 12, "Finance": 1},
+    "new.hire@northwind.example":     {"People": 1}
+  }
+}

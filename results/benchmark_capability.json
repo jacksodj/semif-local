@@ -1,0 +1,1026 @@
+{
+  "conditions": {
+    "full message, aliases populated": {
+      "n": 21,
+      "top1": 1.0,
+      "top3": 1.0,
+      "auto_rate": 1.0,
+      "auto_precision": 1.0,
+      "rows": [
+        {
+          "id": "m01",
+          "gold": "spindle",
+          "top": "spindle",
+          "top3": [
+            "spindle",
+            "tamarind",
+            "calyx"
+          ],
+          "route": "auto",
+          "p": 0.9989
+        },
+        {
+          "id": "m02",
+          "gold": "atlas",
+          "top": "atlas",
+          "top3": [
+            "atlas",
+            "ledger",
+            "halyard"
+          ],
+          "route": "auto",
+          "p": 0.9987
+        },
+        {
+          "id": "m03",
+          "gold": "kestrel",
+          "top": "kestrel",
+          "top3": [
+            "kestrel",
+            "general",
+            "tern"
+          ],
+          "route": "auto",
+          "p": 0.9988
+        },
+        {
+          "id": "m04",
+          "gold": "marlin",
+          "top": "marlin",
+          "top3": [
+            "marlin",
+            "quasar",
+            "general"
+          ],
+          "route": "auto",
+          "p": 0.9992
+        },
+        {
+          "id": "m05",
+          "gold": "ledger",
+          "top": "ledger",
+          "top3": [
+            "ledger",
+            "quillon",
+            "general"
+          ],
+          "route": "auto",
+          "p": 0.999
+        },
+        {
+          "id": "m06",
+          "gold": "bramble",
+          "top": "bramble",
+          "top3": [
+            "bramble",
+            "general",
+            "spindle"
+          ],
+          "route": "auto",
+          "p": 0.9987
+        },
+        {
+          "id": "m07",
+          "gold": "cobalt",
+          "top": "cobalt",
+          "top3": [
+            "cobalt",
+            "ledger",
+            "general"
+          ],
+          "route": "auto",
+          "p": 0.9995
+        },
+        {
+          "id": "m08",
+          "gold": "fennel",
+          "top": "fennel",
+          "top3": [
+            "fennel",
+            "general",
+            "juniper"
+          ],
+          "route": "auto",
+          "p": 0.9989
+        },
+        {
+          "id": "m09",
+          "gold": "obsidian",
+          "top": "obsidian",
+          "top3": [
+            "obsidian",
+            "general",
+            "cobalt"
+          ],
+          "route": "auto",
+          "p": 0.9988
+        },
+        {
+          "id": "m10",
+          "gold": "garnet",
+          "top": "garnet",
+          "top3": [
+            "garnet",
+            "kestrel",
+            "basalt"
+          ],
+          "route": "auto",
+          "p": 0.9991
+        },
+        {
+          "id": "m11",
+          "gold": "halyard",
+          "top": "halyard",
+          "top3": [
+            "halyard",
+            "nettle",
+            "general"
+          ],
+          "route": "auto",
+          "p": 0.9994
+        },
+        {
+          "id": "m12",
+          "gold": "saffron",
+          "top": "saffron",
+          "top3": [
+            "saffron",
+            "general",
+            "yarrow"
+          ],
+          "route": "auto",
+          "p": 0.9994
+        },
+        {
+          "id": "m13",
+          "gold": "juniper",
+          "top": "juniper",
+          "top3": [
+            "juniper",
+            "ledger",
+            "general"
+          ],
+          "route": "auto",
+          "p": 0.999
+        },
+        {
+          "id": "m14",
+          "gold": "wren",
+          "top": "wren",
+          "top3": [
+            "wren",
+            "fennel",
+            "marlin"
+          ],
+          "route": "auto",
+          "p": 0.9992
+        },
+        {
+          "id": "m15",
+          "gold": "tamarind",
+          "top": "tamarind",
+          "top3": [
+            "tamarind",
+            "general",
+            "spindle"
+          ],
+          "route": "auto",
+          "p": 0.9975
+        },
+        {
+          "id": "m16",
+          "gold": "kiln",
+          "top": "kiln",
+          "top3": [
+            "kiln",
+            "general",
+            "garnet"
+          ],
+          "route": "auto",
+          "p": 0.9994
+        },
+        {
+          "id": "m17",
+          "gold": "nimbus",
+          "top": "nimbus",
+          "top3": [
+            "nimbus",
+            "general",
+            "marlin"
+          ],
+          "route": "auto",
+          "p": 0.9994
+        },
+        {
+          "id": "m18",
+          "gold": "plover",
+          "top": "plover",
+          "top3": [
+            "plover",
+            "general",
+            "atlas"
+          ],
+          "route": "auto",
+          "p": 0.9994
+        },
+        {
+          "id": "m19",
+          "gold": "alder",
+          "top": "alder",
+          "top3": [
+            "alder",
+            "general",
+            "ledger"
+          ],
+          "route": "auto",
+          "p": 0.9986
+        },
+        {
+          "id": "m20",
+          "gold": "egret",
+          "top": "egret",
+          "top3": [
+            "egret",
+            "general",
+            "garnet"
+          ],
+          "route": "auto",
+          "p": 0.9956
+        },
+        {
+          "id": "m21",
+          "gold": "thistle",
+          "top": "thistle",
+          "top3": [
+            "thistle",
+            "general",
+            "marlin"
+          ],
+          "route": "auto",
+          "p": 0.999
+        }
+      ]
+    },
+    "subject line only": {
+      "n": 21,
+      "top1": 1.0,
+      "top3": 1.0,
+      "auto_rate": 1.0,
+      "auto_precision": 1.0,
+      "rows": [
+        {
+          "id": "m01",
+          "gold": "spindle",
+          "top": "spindle",
+          "top3": [
+            "spindle",
+            "calyx",
+            "tamarind"
+          ],
+          "route": "auto",
+          "p": 0.8639
+        },
+        {
+          "id": "m02",
+          "gold": "atlas",
+          "top": "atlas",
+          "top3": [
+            "atlas",
+            "ledger",
+            "halyard"
+          ],
+          "route": "auto",
+          "p": 0.9839
+        },
+        {
+          "id": "m03",
+          "gold": "kestrel",
+          "top": "kestrel",
+          "top3": [
+            "kestrel",
+            "general",
+            "kiln"
+          ],
+          "route": "auto",
+          "p": 0.9808
+        },
+        {
+          "id": "m04",
+          "gold": "marlin",
+          "top": "marlin",
+          "top3": [
+            "marlin",
+            "atlas",
+            "general"
+          ],
+          "route": "auto",
+          "p": 0.9675
+        },
+        {
+          "id": "m05",
+          "gold": "ledger",
+          "top": "ledger",
+          "top3": [
+            "ledger",
+            "general",
+            "atlas"
+          ],
+          "route": "auto",
+          "p": 0.9891
+        },
+        {
+          "id": "m06",
+          "gold": "bramble",
+          "top": "bramble",
+          "top3": [
+            "bramble",
+            "general",
+            "marlin"
+          ],
+          "route": "auto",
+          "p": 0.9815
+        },
+        {
+          "id": "m07",
+          "gold": "cobalt",
+          "top": "cobalt",
+          "top3": [
+            "cobalt",
+            "general",
+            "spindle"
+          ],
+          "route": "auto",
+          "p": 0.9933
+        },
+        {
+          "id": "m08",
+          "gold": "fennel",
+          "top": "fennel",
+          "top3": [
+            "fennel",
+            "general",
+            "halyard"
+          ],
+          "route": "auto",
+          "p": 0.983
+        },
+        {
+          "id": "m09",
+          "gold": "obsidian",
+          "top": "obsidian",
+          "top3": [
+            "obsidian",
+            "general",
+            "cobalt"
+          ],
+          "route": "auto",
+          "p": 0.9759
+        },
+        {
+          "id": "m10",
+          "gold": "garnet",
+          "top": "garnet",
+          "top3": [
+            "garnet",
+            "general",
+            "kestrel"
+          ],
+          "route": "auto",
+          "p": 0.9838
+        },
+        {
+          "id": "m11",
+          "gold": "halyard",
+          "top": "halyard",
+          "top3": [
+            "halyard",
+            "ledger",
+            "obsidian"
+          ],
+          "route": "auto",
+          "p": 0.9917
+        },
+        {
+          "id": "m12",
+          "gold": "saffron",
+          "top": "saffron",
+          "top3": [
+            "saffron",
+            "general",
+            "marlin"
+          ],
+          "route": "auto",
+          "p": 0.9807
+        },
+        {
+          "id": "m13",
+          "gold": "juniper",
+          "top": "juniper",
+          "top3": [
+            "juniper",
+            "general",
+            "marlin"
+          ],
+          "route": "auto",
+          "p": 0.8035
+        },
+        {
+          "id": "m14",
+          "gold": "wren",
+          "top": "wren",
+          "top3": [
+            "wren",
+            "obsidian",
+            "atlas"
+          ],
+          "route": "auto",
+          "p": 0.9866
+        },
+        {
+          "id": "m15",
+          "gold": "tamarind",
+          "top": "tamarind",
+          "top3": [
+            "tamarind",
+            "general",
+            "marlin"
+          ],
+          "route": "auto",
+          "p": 0.8667
+        },
+        {
+          "id": "m16",
+          "gold": "kiln",
+          "top": "kiln",
+          "top3": [
+            "kiln",
+            "general",
+            "obsidian"
+          ],
+          "route": "auto",
+          "p": 0.9923
+        },
+        {
+          "id": "m17",
+          "gold": "nimbus",
+          "top": "nimbus",
+          "top3": [
+            "nimbus",
+            "general",
+            "juniper"
+          ],
+          "route": "auto",
+          "p": 0.9769
+        },
+        {
+          "id": "m18",
+          "gold": "plover",
+          "top": "plover",
+          "top3": [
+            "plover",
+            "general",
+            "atlas"
+          ],
+          "route": "auto",
+          "p": 0.9819
+        },
+        {
+          "id": "m19",
+          "gold": "alder",
+          "top": "alder",
+          "top3": [
+            "alder",
+            "ledger",
+            "halyard"
+          ],
+          "route": "auto",
+          "p": 0.9953
+        },
+        {
+          "id": "m20",
+          "gold": "egret",
+          "top": "egret",
+          "top3": [
+            "egret",
+            "general",
+            "garnet"
+          ],
+          "route": "auto",
+          "p": 0.9591
+        },
+        {
+          "id": "m21",
+          "gold": "thistle",
+          "top": "thistle",
+          "top3": [
+            "thistle",
+            "general",
+            "bramble"
+          ],
+          "route": "auto",
+          "p": 0.9585
+        }
+      ]
+    },
+    "full message, no aliases": {
+      "n": 21,
+      "top1": 0.9047619047619048,
+      "top3": 0.9047619047619048,
+      "auto_rate": 0.8571428571428571,
+      "auto_precision": 1.0,
+      "rows": [
+        {
+          "id": "m01",
+          "gold": "spindle",
+          "top": "spindle",
+          "top3": [
+            "spindle",
+            "general",
+            "fennel"
+          ],
+          "route": "auto",
+          "p": 0.9989
+        },
+        {
+          "id": "m02",
+          "gold": "atlas",
+          "top": "ledger",
+          "top3": [
+            "ledger",
+            "halyard",
+            "general"
+          ],
+          "route": "new_project",
+          "p": 0.002
+        },
+        {
+          "id": "m03",
+          "gold": "kestrel",
+          "top": "kestrel",
+          "top3": [
+            "kestrel",
+            "general",
+            "marlin"
+          ],
+          "route": "auto",
+          "p": 0.9988
+        },
+        {
+          "id": "m04",
+          "gold": "marlin",
+          "top": "marlin",
+          "top3": [
+            "marlin",
+            "general",
+            "vellum"
+          ],
+          "route": "auto",
+          "p": 0.9992
+        },
+        {
+          "id": "m05",
+          "gold": "ledger",
+          "top": "ledger",
+          "top3": [
+            "ledger",
+            "quillon",
+            "general"
+          ],
+          "route": "review",
+          "p": 0.2561
+        },
+        {
+          "id": "m06",
+          "gold": "bramble",
+          "top": "bramble",
+          "top3": [
+            "bramble",
+            "general",
+            "spindle"
+          ],
+          "route": "auto",
+          "p": 0.9987
+        },
+        {
+          "id": "m07",
+          "gold": "cobalt",
+          "top": "cobalt",
+          "top3": [
+            "cobalt",
+            "ledger",
+            "general"
+          ],
+          "route": "auto",
+          "p": 0.9995
+        },
+        {
+          "id": "m08",
+          "gold": "fennel",
+          "top": "fennel",
+          "top3": [
+            "fennel",
+            "general",
+            "juniper"
+          ],
+          "route": "auto",
+          "p": 0.9989
+        },
+        {
+          "id": "m09",
+          "gold": "obsidian",
+          "top": "obsidian",
+          "top3": [
+            "obsidian",
+            "general",
+            "cobalt"
+          ],
+          "route": "auto",
+          "p": 0.9988
+        },
+        {
+          "id": "m10",
+          "gold": "garnet",
+          "top": "garnet",
+          "top3": [
+            "garnet",
+            "kestrel",
+            "basalt"
+          ],
+          "route": "auto",
+          "p": 0.9991
+        },
+        {
+          "id": "m11",
+          "gold": "halyard",
+          "top": "halyard",
+          "top3": [
+            "halyard",
+            "general",
+            "heron"
+          ],
+          "route": "auto",
+          "p": 0.9994
+        },
+        {
+          "id": "m12",
+          "gold": "saffron",
+          "top": "general",
+          "top3": [
+            "general",
+            "marlin",
+            "cobalt"
+          ],
+          "route": "new_project",
+          "p": 0.003
+        },
+        {
+          "id": "m13",
+          "gold": "juniper",
+          "top": "juniper",
+          "top3": [
+            "juniper",
+            "ledger",
+            "general"
+          ],
+          "route": "auto",
+          "p": 0.999
+        },
+        {
+          "id": "m14",
+          "gold": "wren",
+          "top": "wren",
+          "top3": [
+            "wren",
+            "fennel",
+            "marlin"
+          ],
+          "route": "auto",
+          "p": 0.9992
+        },
+        {
+          "id": "m15",
+          "gold": "tamarind",
+          "top": "tamarind",
+          "top3": [
+            "tamarind",
+            "general",
+            "ember"
+          ],
+          "route": "auto",
+          "p": 0.9975
+        },
+        {
+          "id": "m16",
+          "gold": "kiln",
+          "top": "kiln",
+          "top3": [
+            "kiln",
+            "general",
+            "garnet"
+          ],
+          "route": "auto",
+          "p": 0.9994
+        },
+        {
+          "id": "m17",
+          "gold": "nimbus",
+          "top": "nimbus",
+          "top3": [
+            "nimbus",
+            "general",
+            "marlin"
+          ],
+          "route": "auto",
+          "p": 0.9994
+        },
+        {
+          "id": "m18",
+          "gold": "plover",
+          "top": "plover",
+          "top3": [
+            "plover",
+            "general",
+            "atlas"
+          ],
+          "route": "auto",
+          "p": 0.9994
+        },
+        {
+          "id": "m19",
+          "gold": "alder",
+          "top": "alder",
+          "top3": [
+            "alder",
+            "general",
+            "ledger"
+          ],
+          "route": "auto",
+          "p": 0.9986
+        },
+        {
+          "id": "m20",
+          "gold": "egret",
+          "top": "egret",
+          "top3": [
+            "egret",
+            "general",
+            "garnet"
+          ],
+          "route": "auto",
+          "p": 0.9956
+        },
+        {
+          "id": "m21",
+          "gold": "thistle",
+          "top": "thistle",
+          "top3": [
+            "thistle",
+            "general",
+            "marlin"
+          ],
+          "route": "auto",
+          "p": 0.999
+        }
+      ]
+    },
+    "full message, stale taxonomy": {
+      "n": 16,
+      "top1": 1.0,
+      "top3": 1.0,
+      "auto_rate": 1.0,
+      "auto_precision": 1.0,
+      "rows": [
+        {
+          "id": "m01",
+          "gold": "spindle",
+          "top": "spindle",
+          "top3": [
+            "spindle",
+            "tamarind",
+            "calyx"
+          ],
+          "route": "auto",
+          "p": 0.9989
+        },
+        {
+          "id": "m02",
+          "gold": "atlas",
+          "top": "atlas",
+          "top3": [
+            "atlas",
+            "ledger",
+            "halyard"
+          ],
+          "route": "auto",
+          "p": 0.9987
+        },
+        {
+          "id": "m03",
+          "gold": "kestrel",
+          "top": "kestrel",
+          "top3": [
+            "kestrel",
+            "general",
+            "tern"
+          ],
+          "route": "auto",
+          "p": 0.9988
+        },
+        {
+          "id": "m04",
+          "gold": "marlin",
+          "top": "marlin",
+          "top3": [
+            "marlin",
+            "quasar",
+            "general"
+          ],
+          "route": "auto",
+          "p": 0.9992
+        },
+        {
+          "id": "m05",
+          "gold": "ledger",
+          "top": "ledger",
+          "top3": [
+            "ledger",
+            "quillon",
+            "general"
+          ],
+          "route": "auto",
+          "p": 0.999
+        },
+        {
+          "id": "m06",
+          "gold": "bramble",
+          "top": "bramble",
+          "top3": [
+            "bramble",
+            "general",
+            "spindle"
+          ],
+          "route": "auto",
+          "p": 0.9987
+        },
+        {
+          "id": "m08",
+          "gold": "fennel",
+          "top": "fennel",
+          "top3": [
+            "fennel",
+            "general",
+            "juniper"
+          ],
+          "route": "auto",
+          "p": 0.9989
+        },
+        {
+          "id": "m09",
+          "gold": "obsidian",
+          "top": "obsidian",
+          "top3": [
+            "obsidian",
+            "general",
+            "spindle"
+          ],
+          "route": "auto",
+          "p": 0.9988
+        },
+        {
+          "id": "m11",
+          "gold": "halyard",
+          "top": "halyard",
+          "top3": [
+            "halyard",
+            "nettle",
+            "general"
+          ],
+          "route": "auto",
+          "p": 0.9994
+        },
+        {
+          "id": "m12",
+          "gold": "saffron",
+          "top": "saffron",
+          "top3": [
+            "saffron",
+            "general",
+            "yarrow"
+          ],
+          "route": "auto",
+          "p": 0.9994
+        },
+        {
+          "id": "m13",
+          "gold": "juniper",
+          "top": "juniper",
+          "top3": [
+            "juniper",
+            "ledger",
+            "general"
+          ],
+          "route": "auto",
+          "p": 0.999
+        },
+        {
+          "id": "m15",
+          "gold": "tamarind",
+          "top": "tamarind",
+          "top3": [
+            "tamarind",
+            "general",
+            "spindle"
+          ],
+          "route": "auto",
+          "p": 0.9975
+        },
+        {
+          "id": "m17",
+          "gold": "nimbus",
+          "top": "nimbus",
+          "top3": [
+            "nimbus",
+            "general",
+            "marlin"
+          ],
+          "route": "auto",
+          "p": 0.9994
+        },
+        {
+          "id": "m19",
+          "gold": "alder",
+          "top": "alder",
+          "top3": [
+            "alder",
+            "general",
+            "ledger"
+          ],
+          "route": "auto",
+          "p": 0.9986
+        },
+        {
+          "id": "m20",
+          "gold": "egret",
+          "top": "egret",
+          "top3": [
+            "egret",
+            "general",
+            "zephyr"
+          ],
+          "route": "auto",
+          "p": 0.9956
+        },
+        {
+          "id": "m21",
+          "gold": "thistle",
+          "top": "thistle",
+          "top3": [
+            "thistle",
+            "general",
+            "marlin"
+          ],
+          "route": "auto",
+          "p": 0.999
+        }
+      ]
+    }
+  },
+  "orphans": [
+    {
+      "id": "m07",
+      "gold": "cobalt",
+      "route": "new_project",
+      "top": "ledger",
+      "p": 0.0007
+    },
+    {
+      "id": "m10",
+      "gold": "garnet",
+      "route": "new_project",
+      "top": "kestrel",
+      "p": 0.0002
+    },
+    {
+      "id": "m14",
+      "gold": "wren",
+      "route": "new_project",
+      "top": "ledger",
+      "p": 0.0025
+    },
+    {
+      "id": "m16",
+      "gold": "kiln",
+      "route": "new_project",
+      "top": "general",
+      "p": 0.0009
+    },
+    {
+      "id": "m18",
+      "gold": "plover",
+      "route": "new_project",
+      "top": "general",
+      "p": 0.0016
+    }
+  ],
+  "seconds_per_message": 7.620936005279021
+}

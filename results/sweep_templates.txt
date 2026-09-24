@@ -1,0 +1,25 @@
+Failure 1 -- verbalizer sweep: 10 messages x 10-project shortlist
+hypothesis form                                  top-1   mean p(correct)  mean p(others)
+This message is about the {name} project.        10/10            0.924           0.000
+The email discusses {name}.                      10/10            0.999           0.000
+The email mentions {name}.                       10/10            0.999           0.001
+This email is related to {name}.                 10/10            0.999           0.001
+The email discusses {name} ({description}).      10/10            0.766           0.000
+
+Failure 2 -- the model can't recognise a name you never gave it
+  m02: alias 'Hydra' p=0.999   canonical 'Atlas Migration' p=0.000
+  m05: alias 'Quillbook' p=0.999   canonical 'Ledger Modernisation' p=0.259
+  m12: alias 'Fraudwatch' p=0.999   canonical 'Saffron' p=0.000
+
+Failure 3 -- a description is not a name
+  m01: bare 0.999   with description 0.943   (Spindle)
+  m03: bare 0.999   with description 0.567   (Kestrel)
+  m04: bare 0.999   with description 0.996   (Marlin)
+  m06: bare 0.999   with description 0.996   (Bramble)
+  m08: bare 0.999   with description 0.993   (Fennel)
+  m09: bare 0.999   with description 0.995   (Obsidian)
+  m11: bare 0.999   with description 0.775   (Halyard)
+  m13: bare 0.999   with description 0.004   (Juniper)
+  m15: bare 0.998   with description 0.965   (Tamarind)
+  m17: bare 0.999   with description 0.406   (Nimbus Licensing)
+  mean drop from adding the description: +0.235

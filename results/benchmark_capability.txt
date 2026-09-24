@@ -1,0 +1,33 @@
+
+condition                            n  top-1   top-3   auto-tagged  precision when auto-tagged
+full message, aliases populated     21  100.0%  100.0%       100.0%      100.0%
+subject line only                   21  100.0%  100.0%       100.0%      100.0%
+full message, no aliases            21   90.5%   90.5%        85.7%      100.0%
+full message, stale taxonomy        16  100.0%  100.0%       100.0%      100.0%
+
+alias effect on top-1: +9.5 points
+  alias-only messages with aliases: 3/3 correct
+  alias-only messages without aliases: 1/3 correct
+
+orphaned mail (gold project removed from the taxonomy), 5 messages:
+  m07 (cobalt): route=new_project top=ledger p=0.001
+  m10 (garnet): route=new_project top=kestrel p=0.000
+  m14 (wren): route=new_project top=ledger p=0.003
+  m16 (kiln): route=new_project top=general p=0.001
+  m18 (plover): route=new_project top=general p=0.002
+
+prefilter recall by K (is the right answer even in the shortlist?):
+  K=4   100.0%
+  K=8   100.0%
+  K=12  100.0%
+  K=16  100.0%
+  K=24  100.0%
+
+business unit from participants:
+  one member who reliably maps to one unit         Security 1.00 -> Security
+  that member plus the exec who is on everything   Security 0.95 -> Security
+  members from two different units                 Security 0.50 -> ask a human
+  only the exec who is on everything               Platform 0.28 -> ask a human
+  on the 21 fixture messages: 9 auto-assigned, 9 match the project's unit
+
+79 pipeline runs in 602s (7.6s per message at K=16)
