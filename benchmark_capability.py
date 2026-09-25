@@ -5,7 +5,7 @@ Runs the full pipeline (premise -> prefilter -> cross-encoder -> route) on the f
 fixture under four conditions, then checks where orphaned mail goes, how prefilter recall
 depends on K, and how business units resolve from participants.
 
-    .venv/bin/python benchmark_capability.py [--model dist/semif-4b-nli-v5-mlx] [--k 16]
+    .venv/bin/python benchmark_capability.py [--model <dir or Hub id>] [--k 16]
 """
 import argparse
 import json
@@ -13,7 +13,7 @@ import time
 
 from semif.triage import (classify, load_messages, load_people, load_taxonomy, prefilter,
                           resolve_unit, without_aliases, without_projects)
-from semif_mlx import SemIfCrossEncoder
+from semif_mlx import DEFAULT_MODEL, SemIfCrossEncoder
 
 
 def score(ce, msgs, taxonomy, k, subject_only=False):
@@ -40,7 +40,7 @@ def fmt(x):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", default="openjev/qwen3.5-4b-nli-v5")
+    ap.add_argument("--model", default=DEFAULT_MODEL)
     ap.add_argument("--k", type=int, default=16, help="prefilter shortlist size")
     ap.add_argument("--out", default=None, help="write per-message results JSON here")
     args = ap.parse_args()

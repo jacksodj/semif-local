@@ -12,6 +12,8 @@ import time
 
 import numpy as np
 
+from semif_mlx import DEFAULT_MODEL, ORIGINAL_MODEL, resolve
+
 FILLER = ("The committee reviewed the quarterly figures and agreed that the regional offices "
           "should report their numbers in the same format from next month onwards. ")
 
@@ -31,10 +33,12 @@ def main():
     ap.add_argument("backend", choices=["mlx", "torch"])
     ap.add_argument("length", type=int, help="target premise length in tokens")
     ap.add_argument("bs", type=int, help="batch size")
-    ap.add_argument("--model", default="openjev/qwen3.5-4b-nli-v5")
+    ap.add_argument("--model", default=None,
+                    help=f"default: {DEFAULT_MODEL} for mlx, {ORIGINAL_MODEL} for torch")
     ap.add_argument("--bits", type=int, choices=[4, 8])
     ap.add_argument("--n", type=int, default=32, help="pairs to time")
     args = ap.parse_args()
+    args.model = args.model or (DEFAULT_MODEL if args.backend == "mlx" else ORIGINAL_MODEL)
 
     if args.backend == "mlx":
         from semif_mlx import SemIfCrossEncoder
@@ -44,6 +48,7 @@ def main():
     else:
         import torch
         from transformers import AutoModelForSequenceClassification, AutoTokenizer
+        args.model = str(resolve(args.model))
         tok = AutoTokenizer.from_pretrained(args.model)
         tok.padding_side = "right"
         model = AutoModelForSequenceClassification.from_pretrained(args.model, dtype=torch.bfloat16).to("mps").eval()

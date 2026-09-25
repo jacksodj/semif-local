@@ -4,9 +4,10 @@ The Qwen3.5 backbone comes from mlx-lm (Metal kernels for gated delta net); this
 file adds back the 3-class NLI head that mlx-lm's causal-LM wrapper drops.
 
 Loads either
-  * an original Hugging Face checkpoint directory (AlexWortega/openjev/<subdir>), or
-  * a pre-converted MLX checkpoint (see tools/convert_to_mlx.py), or
-  * a Hub repo id of a pre-converted checkpoint, e.g. "jacksodj/semif-4b-nli-v5-mlx".
+  * a local directory holding an original or pre-converted checkpoint,
+  * a Hub repo id, e.g. "jacksodj/semif-4b-nli-v5-mlx" (the default), or
+  * a Hub repo id plus subfolder, e.g. "AlexWortega/openjev/qwen3.5-4b-nli-v5" (the original,
+    sanitized on load; only that subfolder is downloaded).
 """
 import json
 import pathlib
@@ -18,6 +19,8 @@ from mlx.utils import tree_unflatten
 from mlx_lm.models import qwen3_5
 from transformers import AutoTokenizer
 
+DEFAULT_MODEL = "jacksodj/semif-4b-nli-v5-mlx"              # pre-converted MLX weights
+ORIGINAL_MODEL = "AlexWortega/openjev/qwen3.5-4b-nli-v5"     # Transformers checkpoint it came from
 LABELS = ["contradiction", "entailment", "neutral"]   # the head's output order
 CON, ENT, NEU = 0, 1, 2
 
@@ -40,12 +43,16 @@ class SemIfMLX(nn.Module):
 
 
 def resolve(path_or_repo) -> pathlib.Path:
-    """A local directory, or a Hub repo id to download."""
+    """A local directory, a Hub repo id, or "owner/repo/subfolder" (downloads just that subfolder)."""
     p = pathlib.Path(path_or_repo)
     if p.exists():
         return p
     from huggingface_hub import snapshot_download
-    return pathlib.Path(snapshot_download(str(path_or_repo)))
+    owner, repo, *sub = str(path_or_repo).split("/", 2)
+    if not sub:
+        return pathlib.Path(snapshot_download(f"{owner}/{repo}"))
+    root = snapshot_download(f"{owner}/{repo}", allow_patterns=[f"{sub[0]}/*"])
+    return pathlib.Path(root) / sub[0]
 
 
 def load_params(model: SemIfMLX, path: pathlib.Path) -> dict:
@@ -65,7 +72,7 @@ def load_params(model: SemIfMLX, path: pathlib.Path) -> dict:
 class SemIfCrossEncoder:
     """Load once, then .predict(pairs) -> (n, 3) probabilities in LABELS order."""
 
-    def __init__(self, path, bits: int | None = None, bs: int = 8, max_len: int = 4096,
+    def __init__(self, path=DEFAULT_MODEL, bits: int | None = None, bs: int = 8, max_len: int = 4096,
                  sort_by_length: bool = True):
         path = resolve(path)
         self.path = path
@@ -133,6 +140,6 @@ class SemIfCrossEncoder:
 
 if __name__ == "__main__":
     import sys
-    ce = SemIfCrossEncoder(sys.argv[1] if len(sys.argv) > 1 else "openjev/qwen3.5-4b-nli-v5")
+    ce = SemIfCrossEncoder(sys.argv[1] if len(sys.argv) > 1 else DEFAULT_MODEL)
     probs = ce.predict([("A man is playing a guitar.", "Someone is making music.")])
     print({k: round(float(v), 4) for k, v in zip(LABELS, probs[0])})

@@ -10,14 +10,13 @@ email/project triage pipeline built on it. The published MLX weights are `jackso
 ```bash
 uv venv --python 3.12
 uv pip install --python .venv/bin/python -e ".[torch,eval]"
-# either use the pre-converted MLX weights (no download step needed; pass the repo id as --model) ...
-#   --model jacksodj/semif-4b-nli-v5-mlx
-# ... or fetch the original checkpoint (two separate commands -- combining them silently skips the weights)
-.venv/bin/hf download AlexWortega/openjev --include "qwen3.5-4b-nli-v5/*" --local-dir openjev
 ```
 
-Scripts default to `--model openjev/qwen3.5-4b-nli-v5` (a local directory, not a Hub id). `openjev/`
-and `dist/` hold multi-GB weights and are git-ignored.
+Model defaults live in `semif_mlx.py`. The MLX scripts use `DEFAULT_MODEL` (`jacksodj/semif-4b-nli-v5-mlx`),
+fetched into the HF cache on first use. The Transformers paths (`compare_mlx_torch.py`, `bench.py torch`)
+use `ORIGINAL_MODEL` (`AlexWortega/openjev/qwen3.5-4b-nli-v5`). `resolve()` accepts a local dir, a repo id,
+or `owner/repo/subfolder`, and downloads only the subfolder. Local `openjev/` and `dist/` weight dirs are
+git-ignored.
 
 ## Layout
 

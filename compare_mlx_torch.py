@@ -3,7 +3,9 @@
 
 Each backend runs in its own subprocess so a 16 GB Mac never holds two copies of the weights.
 
-    .venv/bin/python compare_mlx_torch.py [--model openjev/qwen3.5-4b-nli-v5]
+    .venv/bin/python compare_mlx_torch.py [--model <original>] [--mlx-model <MLX dir or Hub id>]
+
+Transformers needs the original checkpoint (~9 GB, only the one subfolder is downloaded).
 """
 import argparse
 import json
@@ -11,6 +13,8 @@ import subprocess
 import sys
 
 import numpy as np
+
+from semif_mlx import DEFAULT_MODEL, ORIGINAL_MODEL
 
 PAIRS = [
     ("A man is playing a guitar.", "Someone is making music."),                 # entailment
@@ -25,6 +29,8 @@ PAIRS = [
 def run_torch(model_dir):
     import torch
     from transformers import AutoModelForSequenceClassification, AutoTokenizer
+    from semif_mlx import resolve
+    model_dir = str(resolve(model_dir))
     tok = AutoTokenizer.from_pretrained(model_dir)
     model = AutoModelForSequenceClassification.from_pretrained(model_dir, dtype=torch.bfloat16).to("mps").eval()
     rows = []
@@ -42,9 +48,9 @@ def run_mlx(model_dir):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", default="openjev/qwen3.5-4b-nli-v5",
-                    help="original HF checkpoint dir (torch needs the unconverted weights)")
-    ap.add_argument("--mlx-model", default=None, help="MLX checkpoint to compare (default: --model)")
+    ap.add_argument("--model", default=ORIGINAL_MODEL,
+                    help="original checkpoint: dir or owner/repo/subfolder (torch needs the unconverted weights)")
+    ap.add_argument("--mlx-model", default=DEFAULT_MODEL, help="MLX checkpoint to compare")
     ap.add_argument("--backend", choices=["torch", "mlx"], help=argparse.SUPPRESS)
     args = ap.parse_args()
 
@@ -59,7 +65,7 @@ def main():
         return np.array(json.loads(next(l for l in out.splitlines() if l.startswith("PROBS "))[6:]))
 
     torch_probs = child("torch", args.model)
-    mlx_probs = child("mlx", args.mlx_model or args.model)
+    mlx_probs = child("mlx", args.mlx_model)
     agree = (mlx_probs.argmax(-1) == torch_probs.argmax(-1)).sum()
     print(f"label agreement vs torch : {agree}/{len(PAIRS)}")
     print(f"prob correlation         : {np.corrcoef(mlx_probs.ravel(), torch_probs.ravel())[0, 1]:.6f}")

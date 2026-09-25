@@ -6,7 +6,7 @@
 """
 import argparse
 
-from semif_mlx import LABELS, SemIfCrossEncoder
+from semif_mlx import DEFAULT_MODEL, LABELS, SemIfCrossEncoder
 
 SMOKE = [
     ("A man is playing a guitar.", "Someone is making music.", "entailment"),
@@ -26,7 +26,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("premise", nargs="?")
     ap.add_argument("hypotheses", nargs="*")
-    ap.add_argument("--model", default="openjev/qwen3.5-4b-nli-v5")
+    ap.add_argument("--model", default=DEFAULT_MODEL)
     ap.add_argument("--bits", type=int, choices=[4, 8])
     ap.add_argument("--smoke", action="store_true")
     args = ap.parse_args()

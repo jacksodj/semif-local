@@ -18,9 +18,7 @@ import mlx.core as mx
 import numpy as np
 from datasets import load_dataset
 
-from semif_mlx import CON, ENT, NEU, SemIfCrossEncoder
-
-DEFAULT_MODEL = "openjev/qwen3.5-4b-nli-v5"
+from semif_mlx import CON, DEFAULT_MODEL, ENT, NEU, SemIfCrossEncoder
 
 # ----------------------------------------------------------------------------- MNLI
 MNLI_TO_OURS = {0: ENT, 1: NEU, 2: CON}      # MNLI order -> [con, ent, neu]

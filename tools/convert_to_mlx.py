@@ -5,7 +5,7 @@ The output holds the Qwen3.5 text backbone already sanitized for mlx-lm (vision 
 dropped, names remapped, norms shifted, conv1d transposed) plus the 3-class head as
 `score.weight`, in bf16. semif_mlx.SemIfCrossEncoder loads it with no conversion step.
 
-    .venv/bin/python tools/convert_to_mlx.py openjev/qwen3.5-4b-nli-v5 dist/semif-4b-nli-v5-mlx
+    .venv/bin/python tools/convert_to_mlx.py AlexWortega/openjev/qwen3.5-4b-nli-v5 dist/semif-4b-nli-v5-mlx
 
 Quantization is applied at load time instead (SemIfCrossEncoder(..., bits=8)), so there is
 one checkpoint to publish and precision stays the caller's choice.
@@ -20,7 +20,7 @@ import mlx.core as mx
 from mlx.utils import tree_flatten
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from semif_mlx import SemIfCrossEncoder  # noqa: E402
+from semif_mlx import SemIfCrossEncoder, resolve  # noqa: E402
 
 COPY = ["tokenizer.json", "tokenizer_config.json", "chat_template.jinja", "panel_manifest.json",
         "train_result.json"]
@@ -32,7 +32,7 @@ def main():
     ap.add_argument("src")
     ap.add_argument("dst")
     args = ap.parse_args()
-    src, dst = pathlib.Path(args.src), pathlib.Path(args.dst)
+    src, dst = resolve(args.src), pathlib.Path(args.dst)
     dst.mkdir(parents=True, exist_ok=True)
 
     ce = SemIfCrossEncoder(src)

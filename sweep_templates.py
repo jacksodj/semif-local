@@ -5,14 +5,14 @@
 2. Vocabulary: an alias-only message scored against the name it uses vs the canonical name.
 3. Description: the bare name vs the name plus its description.
 
-    .venv/bin/python sweep_templates.py [--model dist/semif-4b-nli-v5-mlx]
+    .venv/bin/python sweep_templates.py [--model <dir or Hub id>]
 """
 import argparse
 
 import numpy as np
 
 from semif.triage import build_premise, load_messages, load_taxonomy
-from semif_mlx import SemIfCrossEncoder
+from semif_mlx import DEFAULT_MODEL, SemIfCrossEncoder
 
 TEMPLATES = [
     "This message is about the {name} project.",
@@ -25,7 +25,7 @@ TEMPLATES = [
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", default="openjev/qwen3.5-4b-nli-v5")
+    ap.add_argument("--model", default=DEFAULT_MODEL)
     args = ap.parse_args()
     ce = SemIfCrossEncoder(args.model)
     tax, data = load_taxonomy(), load_messages()

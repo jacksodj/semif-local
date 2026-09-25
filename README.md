@@ -20,19 +20,23 @@ It includes:
 uv venv --python 3.12
 uv pip install --python .venv/bin/python -e ".[torch,eval]"
 
-# Option A: pre-converted MLX weights, fetched on first use
-.venv/bin/python run_semif_mlx.py --smoke --model jacksodj/semif-4b-nli-v5-mlx
+# every script defaults to the pre-converted MLX weights, fetched into the HF cache on first use (8.4 GB)
+.venv/bin/python run_semif_mlx.py --smoke
+```
 
-# Option B: the original checkpoint (needed for the torch comparison). Keep these as two commands:
-# combining them makes `hf download` ignore --include and skip the weights without an error.
+`--model` also takes a local directory or `owner/repo/subfolder`. `compare_mlx_torch.py` and
+`bench.py torch` default to the original Transformers checkpoint, `AlexWortega/openjev/qwen3.5-4b-nli-v5`,
+and download only that subfolder (9.1 GB). To fetch it yourself, use two separate commands, because
+combining them makes `hf download` ignore `--include` and skip the weights without an error:
+
+```bash
 .venv/bin/hf download AlexWortega/openjev --include "qwen3.5-4b-nli-v5/*" --local-dir openjev
 .venv/bin/hf download AlexWortega/openjev --include "modeling_openjev.py" --local-dir openjev
-.venv/bin/python run_semif_mlx.py --smoke
 ```
 
 ```python
 from semif_mlx import SemIfCrossEncoder, LABELS
-ce = SemIfCrossEncoder("jacksodj/semif-4b-nli-v5-mlx")          # or a local checkpoint dir; bits=8 to quantize
+ce = SemIfCrossEncoder()  # jacksodj/semif-4b-nli-v5-mlx; or a local dir / Hub id; bits=8 to quantize
 ce.predict([("A man is playing a guitar.", "Someone is making music.")])   # (n, 3): con, ent, neu
 ce.entail(premise, ["The email discusses Spindle.", "The email discusses Kestrel."])  # P(entailment) each
 ```

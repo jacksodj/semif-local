@@ -5,9 +5,9 @@ import time
 import numpy as np
 from datasets import load_dataset
 
-from semif_mlx import SemIfCrossEncoder             # the class from Part 1
+from semif_mlx import DEFAULT_MODEL, SemIfCrossEncoder            # the class from Part 1
 
-CKPT = sys.argv[1] if len(sys.argv) > 1 else "openjev/qwen3.5-4b-nli-v5"
+CKPT = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_MODEL
 SPLIT = sys.argv[2] if len(sys.argv) > 2 else "validation_matched"
 N = 150
 MNLI_TO_OURS = {0: 1, 1: 2, 2: 0}                   # MNLI order -> [con, ent, neu]
