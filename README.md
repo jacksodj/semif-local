@@ -24,6 +24,8 @@ uv pip install --python .venv/bin/python -e ".[torch,eval]"
 .venv/bin/python run_semif_mlx.py --smoke
 ```
 
+After cloning, run `scripts/setup-hooks.sh` to turn on the secret-scanning git hooks.
+
 `--model` also takes a local directory or `owner/repo/subfolder`. `compare_mlx_torch.py` and
 `bench.py torch` default to the original Transformers checkpoint, `AlexWortega/openjev/qwen3.5-4b-nli-v5`,
 and download only that subfolder (9.1 GB). To fetch it yourself, use two separate commands, because
@@ -139,8 +141,17 @@ semif/triage.py         premise, prefilter, rerank/route, unit resolver
 tools/                  convert_to_mlx.py, publish_hf.py, MODEL_CARD.md for the Hub repo
 fixtures/               fictional taxonomy, messages, people
 results/                measured outputs
-docs/                   diagnostics checklist
+docs/                   diagnostics checklist; agents/ holds the issue-tracker conventions
+scripts/                setup-hooks.sh (secret-scanning git hooks), issue-field.sh
+.github/workflows/      pr-checks.yml: shellcheck, Python compile, gitleaks, bandit
 ```
+
+## Contributing
+
+Changes go through a pull request to `master`. CI runs on Linux, so it can't load the model: it
+shellchecks the hook scripts, byte-compiles the Python, scans for secrets with gitleaks and runs bandit.
+Run `run_semif_mlx.py --smoke`, `compare_mlx_torch.py` and `benchmark_capability.py` on an Apple Silicon
+Mac before changing the port or the pipeline. Agent instructions are in [AGENTS.md](AGENTS.md).
 
 ## Credits
 

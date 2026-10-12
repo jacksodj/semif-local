@@ -5,3 +5,6 @@ __pycache__/
 openjev/
 dist/
 .DS_Store
+# Claude Code: personal settings and session worktrees
+.claude/settings.local.json
+.claude/worktrees/
